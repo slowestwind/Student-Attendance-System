@@ -3,18 +3,17 @@
 include('header.php');
 include('database.php');
 
-$currDate = date("d-m-y");
+$currDate = date("y-m-d");
 $flag =0;
 if(isset($_POST["submit"])){
   foreach($_POST['student_attendance'] as $id=>$student_attendance){
-    echo $id;
+    // echo $id;
     $student_name=$_POST['student_name'][$id];
-    echo $student_name;
+    // echo $student_name;
     $roll_no=$_POST['roll_no'][$id];
-    echo $roll_no;
-    $date=date("d-m-y");
-    echo $date;
-    echo $student_attendance;
+    // echo $roll_no;
+    $date=date("y-m-d");
+    //echo $student_attendance;
     $result=mysqli_query($connect_db, "INSERT INTO attendanceRecord(student_name, roll_no, student_attendance, currDate) VALUES('$student_name', '$roll_no', '$student_attendance', '$date')");
     if($result){
       $flage=1;
@@ -29,11 +28,11 @@ if(isset($_POST["submit"])){
   <div class="panel panel-heading">
     <h2>
       <a href="addStudent.php" class="btn btn-success">Add student</a>
-      <a href="index.php" class="btn btn-info pull-right">View All</a>
+      <a href="ViewRecord.php" class="btn btn-info pull-right">View All</a>
     </h2>
   </div>
   <div class="well text-center">
-      <h2>Date:<?php echo date("d-m-y"); ?></h2>
+      <h2>Date:<?php echo date("y-m-d"); ?></h2>
 
   </div>
 
@@ -74,16 +73,14 @@ if(isset($_POST["submit"])){
               <?php echo $counter; ?>
            </td>
          </tr>
+         <!-- increase counter by 1 -->
           <?php $counter++; ?>
+          <!-- termination of while loop -->
          <?php  }; ?>
-
 
       </table>
       <!-- Submit button -->
       <input type="submit" class="btn btn-primary" name="submit" value="submit">
     </form>
-
   </div>
-
-
 </div>

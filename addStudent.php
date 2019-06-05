@@ -7,7 +7,7 @@
   // variable for checking the database working
   $flag = 0;
   if(isset($_POST["submit"])){
-    $currDate = date("d-m-y");
+    $currDate = date("y-m-d");
   $result=mysqli_query($connect_db, "INSERT INTO attendance(student_name, roll_no, currDate) VALUES('$_POST[student_name]','$_POST[roll_no]','$currDate')");
     if($result){
       $flage=1;
@@ -20,11 +20,11 @@
    <div class="panel-heading">
      <h2>
      <a href="addStudent.php" class="btn btn-primary">Add Student</a>
-     <a href="index.php" class="btn btn-info pull-right">View All</a>
+     <a href="ViewRecord.php" class="btn btn-info pull-right">View All</a>
      </h2>
    </div>
    <div class="well text-center">
-     <h2>Date: <?php echo date("d-m-y"); ?></h2>
+     <h2>Date: <?php echo date("y-m-d"); ?></h2>
    </div>
 
    <?php if($flage=1){ ?>
