@@ -5,7 +5,7 @@ You have heard about the Attendance register in ancient school. But now is digit
 As it's name suggest it is used to connect the database to the page.
 
 ## header.php
-it is a template which is required every time on top the page. that's why it is created separately so that it can include later in each page.
+It is a template page which is required every time on top the page. that's why it is created separately so that it can include later in each page.
 
 ## addStudent.php
 addStudent.php as name suggest it is used to add student to database.
@@ -15,7 +15,7 @@ This is main page where we actually update today's attendance of the student. Fr
 or Go to add new students.
 
 ## ViewRecord.php
-This page is linked from the index.php page, it's main purpose is to show you the past records dates... from here you can select a date for which
+This page is linked from the index.php page, It's main purpose is to show you the past attendance records on dates... from here you can select a date for which
 you want to see the attendance record on that date. From here you are redirected to page studentAttendance.php.
 
 ## studentAttendance.php
