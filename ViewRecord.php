@@ -31,6 +31,7 @@ include('database.php');
          ?>
          <tr>
            <td> <?php echo $serialNumber; ?> </td>
+           <td> <?php echo $row['currDate']; ?>
            </td>
            <td>
 
